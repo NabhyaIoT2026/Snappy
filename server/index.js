@@ -10,7 +10,7 @@ require("dotenv").config();
 
 app.use(cors(
     {
-        origin:[https://snappy-livid.vercel.app/],
+        origin:[https://snappyapi.vercel.app/],
         methods:["POST","GET"],
         credentials:true
     }
