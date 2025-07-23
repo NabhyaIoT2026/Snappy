@@ -64,88 +64,114 @@ export default function Contacts({ contacts, changeChat }) {
     </>
   );
 }
+
 const Container = styled.div`
   display: grid;
   grid-template-rows: 10% 75% 15%;
   overflow: hidden;
   background-color: #080420;
+  padding: 1rem 0;
+
   .brand {
     display: flex;
     align-items: center;
-    gap: 1rem;
     justify-content: center;
+    gap: 1rem;
+
     img {
-      height: 2rem;
+      height: 2.5rem;
     }
+
     h3 {
-      color: white;
+      color: #ffffff;
       text-transform: uppercase;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
     }
   }
+
   .contacts {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: auto;
+    padding: 0 1rem;
+    overflow-y: auto;
     gap: 0.8rem;
+
     &::-webkit-scrollbar {
-      width: 0.2rem;
-      &-thumb {
-        background-color: #ffffff39;
-        width: 0.1rem;
-        border-radius: 1rem;
-      }
+      width: 4px;
     }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #ffffff39;
+      border-radius: 1rem;
+    }
+
     .contact {
-      background-color: #ffffff34;
-      min-height: 5rem;
-      cursor: pointer;
-      width: 90%;
-      border-radius: 0.2rem;
-      padding: 0.4rem;
+      background-color: #ffffff1a;
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border-radius: 0.8rem;
       display: flex;
-      gap: 1rem;
       align-items: center;
-      transition: 0.5s ease-in-out;
+      gap: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: #ffffff2b;
+      }
+
       .avatar {
         img {
           height: 3rem;
+          border-radius: 50%;
+          box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
         }
       }
+
       .username {
         h3 {
-          color: white;
+          color: #ffffff;
+          font-size: 1rem;
         }
       }
     }
+
     .selected {
-      background-color: #9a86f3;
+      background-color: #9a86f3 !important;
+      box-shadow: 0 0 12px rgba(154, 134, 243, 0.4);
     }
   }
 
   .current-user {
     background-color: #0d0d30;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    border-top: 1px solid #1f1f3a;
+
     .avatar {
       img {
-        height: 4rem;
-        max-inline-size: 100%;
+        height: 3.5rem;
+        border-radius: 50%;
       }
     }
+
     .username {
       h2 {
         color: white;
+        font-size: 1.1rem;
       }
     }
+
     @media screen and (min-width: 720px) and (max-width: 1080px) {
-      gap: 0.5rem;
-      .username {
-        h2 {
-          font-size: 1rem;
-        }
+      gap: 0.8rem;
+
+      .username h2 {
+        font-size: 0.9rem;
       }
     }
   }

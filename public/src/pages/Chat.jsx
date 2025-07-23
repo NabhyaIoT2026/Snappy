@@ -65,19 +65,32 @@ const Container = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  padding: 1rem;
+
   .container {
     height: 85vh;
-    width: 85vw;
-    background-color: #00000076;
+    width: 90vw;
+    max-width: 1400px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     display: grid;
     grid-template-columns: 25% 75%;
-    @media screen and (min-width: 720px) and (max-width: 1080px) {
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    @media screen and (max-width: 1080px) {
       grid-template-columns: 35% 65%;
+    }
+
+    @media screen and (max-width: 720px) {
+      grid-template-columns: 100%;
+      grid-template-rows: 40% 60%;
+      height: 95vh;
     }
   }
 `;

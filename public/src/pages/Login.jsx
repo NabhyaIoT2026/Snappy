@@ -99,65 +99,89 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  padding: 1rem;
+
   .brand {
     display: flex;
     align-items: center;
     gap: 1rem;
     justify-content: center;
+    margin-bottom: 2rem;
+
     img {
-      height: 5rem;
+      height: 4.5rem;
     }
+
     h1 {
-      color: white;
+      color: #ffffff;
       text-transform: uppercase;
+      font-size: 2rem;
+      letter-spacing: 1px;
     }
   }
 
   form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    background-color: #00000076;
-    border-radius: 2rem;
-    padding: 5rem;
+    gap: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease-in-out;
   }
+
   input {
     background-color: transparent;
     padding: 1rem;
-    border: 0.1rem solid #4e0eff;
-    border-radius: 0.4rem;
-    color: white;
-    width: 100%;
+    border: 1px solid #4e0eff;
+    border-radius: 0.5rem;
+    color: #ffffff;
     font-size: 1rem;
+    transition: border 0.2s;
+
     &:focus {
-      border: 0.1rem solid #997af0;
+      border-color: #997af0;
       outline: none;
     }
   }
+
   button {
-    background-color: #4e0eff;
-    color: white;
-    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #6e3bff, #4e0eff);
+    color: #ffffff;
+    padding: 0.8rem 2rem;
     border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 0.4rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
     font-size: 1rem;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
     &:hover {
-      background-color: #4e0eff;
+      background: linear-gradient(135deg, #7e5aff, #5e2eff);
     }
   }
+
   span {
-    color: white;
-    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+
     a {
       color: #4e0eff;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 `;

@@ -133,65 +133,104 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  padding: 1rem;
+
   .brand {
     display: flex;
     align-items: center;
     gap: 1rem;
     justify-content: center;
+    margin-bottom: 1.5rem;
+
     img {
-      height: 5rem;
+      height: 4.5rem;
     }
+
     h1 {
       color: white;
       text-transform: uppercase;
+      font-size: 2rem;
+      letter-spacing: 1px;
     }
   }
 
   form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    background-color: #00000076;
-    border-radius: 2rem;
-    padding: 3rem 5rem;
+    gap: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    padding: 3rem 4rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease-in-out;
   }
+
   input {
     background-color: transparent;
     padding: 1rem;
-    border: 0.1rem solid #4e0eff;
-    border-radius: 0.4rem;
+    border: 1px solid #4e0eff;
+    border-radius: 0.5rem;
     color: white;
-    width: 100%;
     font-size: 1rem;
+    transition: border 0.2s ease;
+
     &:focus {
-      border: 0.1rem solid #997af0;
+      border-color: #997af0;
       outline: none;
     }
   }
+
   button {
-    background-color: #4e0eff;
+    background: linear-gradient(135deg, #4e0eff, #6c3bff);
     color: white;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 0.4rem;
+    border-radius: 0.5rem;
     font-size: 1rem;
     text-transform: uppercase;
+    transition: background 0.3s ease;
+
     &:hover {
-      background-color: #4e0eff;
+      background: linear-gradient(135deg, #6d4eff, #7f5aff);
     }
   }
+
   span {
     color: white;
     text-transform: uppercase;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+
     a {
       color: #4e0eff;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.2s ease;
+
+      &:hover {
+        text-decoration: underline;
+        color: #a78bfa;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    form {
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+
+    .brand h1 {
+      font-size: 1.5rem;
     }
   }
 `;
+

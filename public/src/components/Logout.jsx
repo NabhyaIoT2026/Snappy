@@ -27,13 +27,29 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
   background-color: #9a86f3;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
   svg {
-    font-size: 1.3rem;
-    color: #ebe7ff;
+    font-size: 1.4rem;
+    color: #ffffff;
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    background-color: #7c6bf0;
+    transform: scale(1.05);
+
+    svg {
+      color: #e0d4ff;
+    }
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 `;

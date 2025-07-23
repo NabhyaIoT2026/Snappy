@@ -54,90 +54,122 @@ const Container = styled.div`
   grid-template-columns: 5% 95%;
   background-color: #080420;
   padding: 0 2rem;
+  height: 10vh;
+  border-top: 1px solid #1f1f3a;
+
   @media screen and (min-width: 720px) and (max-width: 1080px) {
     padding: 0 1rem;
     gap: 1rem;
   }
+
   .button-container {
     display: flex;
     align-items: center;
-    color: white;
     gap: 1rem;
+
     .emoji {
       position: relative;
+
       svg {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         color: #ffff00c8;
         cursor: pointer;
+        transition: transform 0.2s ease;
+        &:hover {
+          transform: scale(1.1);
+        }
       }
+
       .emoji-picker-react {
         position: absolute;
-        top: -350px;
-        background-color: #080420;
-        box-shadow: 0 5px 10px #9a86f3;
-        border-color: #9a86f3;
+        top: -360px;
+        z-index: 100;
+        background-color: #1f1f3a;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        border: 1px solid #9a86f3;
+        border-radius: 1rem;
+
         .emoji-scroll-wrapper::-webkit-scrollbar {
-          background-color: #080420;
-          width: 5px;
+          width: 6px;
+          background-color: transparent;
+
           &-thumb {
             background-color: #9a86f3;
+            border-radius: 1rem;
           }
         }
-        .emoji-categories {
-          button {
-            filter: contrast(0);
-          }
+
+        .emoji-categories button {
+          filter: contrast(0);
         }
+
         .emoji-search {
-          background-color: transparent;
-          border-color: #9a86f3;
-        }
-        .emoji-group:before {
           background-color: #080420;
+          color: white;
+          border: 1px solid #9a86f3;
+        }
+
+        .emoji-group:before {
+          background-color: #1f1f3a;
         }
       }
     }
   }
+
   .input-container {
     width: 100%;
-    border-radius: 2rem;
     display: flex;
     align-items: center;
-    gap: 2rem;
-    background-color: #ffffff34;
+    gap: 1rem;
+    background-color: #ffffff1a;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
     input {
-      width: 90%;
-      height: 60%;
+      flex: 1;
       background-color: transparent;
-      color: white;
+      color: #ffffff;
       border: none;
-      padding-left: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      padding: 0.5rem;
 
       &::selection {
         background-color: #9a86f3;
       }
+
       &:focus {
         outline: none;
       }
     }
+
     button {
-      padding: 0.3rem 2rem;
-      border-radius: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background-color: #9a86f3;
       border: none;
-      @media screen and (min-width: 720px) and (max-width: 1080px) {
-        padding: 0.3rem 1rem;
-        svg {
-          font-size: 1rem;
-        }
-      }
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
       svg {
-        font-size: 2rem;
-        color: white;
+        font-size: 1.6rem;
+        color: #ffffff;
+        transition: transform 0.2s ease;
+      }
+
+      &:hover svg {
+        transform: scale(1.1);
+      }
+
+      @media screen and (min-width: 720px) and (max-width: 1080px) {
+        padding: 0.4rem 1rem;
+
+        svg {
+          font-size: 1.2rem;
+        }
       }
     }
   }
